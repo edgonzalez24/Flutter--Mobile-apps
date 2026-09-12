@@ -8,6 +8,7 @@ Carpeta de aplicaciones móviles hechas con [Flutter](https://flutter.dev) como 
 |---|---|
 | [`counter_app`](./counter_app) | App de contador básica (proyecto inicial de Flutter). |
 | [`yes_or_no_app`](./yes_or_no_app) | App simple de sí/no. |
+| [`toktik_app`](./toktik_app) | Clon de TikTok con feed vertical de videos, gestos de scroll y reproducción automática. |
 
 ## Requisitos
 
