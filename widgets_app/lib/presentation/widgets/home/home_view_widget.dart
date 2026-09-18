@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
-import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeViewWidget extends StatelessWidget {
   const HomeViewWidget({super.key});
@@ -8,14 +8,12 @@ class HomeViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: BouncingScrollPhysics( 
-        parent: AlwaysScrollableScrollPhysics()
-      ),
+      physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
       itemCount: appMenuItems.length,
       itemBuilder: (context, index) {
         final menuItem = appMenuItems[index];
         return _CustomListTile(menuItem: menuItem);
-      }
+      },
     );
   }
 }
@@ -39,8 +37,8 @@ class _CustomListTile extends StatelessWidget {
         //     builder: (context) => ButtonsScreen(), // Replace with the appropriate screen based on menuItem
         //   ),
         // );
-        Navigator.pushNamed(context, menuItem.link);
-      }
+        context.push(menuItem.link);
+      },
     );
   }
 }
