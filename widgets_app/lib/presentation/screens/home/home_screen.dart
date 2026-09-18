@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/presentation/widgets/home/home_view_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,9 +10,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Widgets + Material 3'),
       ),
-      body: const Center(
-        child: Text('Home Screen'),
-      ),
+      body: const HomeViewWidget(),
     );
   }
 }
