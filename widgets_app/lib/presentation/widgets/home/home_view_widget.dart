@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
+import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeViewWidget extends StatelessWidget {
   const HomeViewWidget({super.key});
@@ -33,9 +34,12 @@ class _CustomListTile extends StatelessWidget {
       subtitle: Text(menuItem.subtitle),
       trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
       onTap: () {
-        Tooltip(
-          message: 'Navegando a ${menuItem.title}',
-        );
+        // Navigator.of(context).push(
+        //   MaterialPageRoute<void>(
+        //     builder: (context) => ButtonsScreen(), // Replace with the appropriate screen based on menuItem
+        //   ),
+        // );
+        Navigator.pushNamed(context, menuItem.link);
       }
     );
   }
