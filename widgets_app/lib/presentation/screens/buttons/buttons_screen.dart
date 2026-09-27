@@ -38,20 +38,61 @@ class _ButtonsView extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: () {}, child: Text('Elavated Button')),
             ElevatedButton(onPressed: null, child: Text('Elavated Disabled')),
-            ElevatedButton.icon(onPressed: () {}, icon: Icon(Icons.access_alarm_outlined), label: Text('Elavated Icon')),
-            FilledButton(onPressed: (){}, child: Text('Filled')),
-            FilledButton.icon(onPressed: () {}, icon: Icon(Icons.padding), label: Text('Filled Icon')),
-            OutlinedButton(onPressed: (){}, child: Text('Outline Button')),
-            OutlinedButton.icon(onPressed: (){}, icon: Icon(Icons.perm_camera_mic), label: Text('Outline Icon')),
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.access_alarm_outlined),
+              label: Text('Elavated Icon'),
+            ),
+            FilledButton(onPressed: () {}, child: Text('Filled')),
+            FilledButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.padding),
+              label: Text('Filled Icon'),
+            ),
+            OutlinedButton(onPressed: () {}, child: Text('Outline Button')),
+            OutlinedButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.perm_camera_mic),
+              label: Text('Outline Icon'),
+            ),
             TextButton(onPressed: () {}, child: Text('Text Button')),
-            TextButton.icon(onPressed: () {}, icon: Icon(Icons.camera), label: Text('Text Icon')),
+            TextButton.icon(
+              onPressed: () {},
+              icon: Icon(Icons.camera),
+              label: Text('Text Icon'),
+            ),
             IconButton(
               onPressed: () {},
               icon: Icon(Icons.read_more),
               color: Colors.white,
-              style: ButtonStyle(backgroundColor: WidgetStateProperty.all(colors.primary))
-            )
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(colors.primary),
+              ),
+            ),
+            CustomButton(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  const CustomButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Material(
+        color: colors.primary,
+        child: InkWell(
+          onTap: () => {},
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text('Custom Button', style: TextStyle(color: Colors.white)),
+          ),
         ),
       ),
     );
